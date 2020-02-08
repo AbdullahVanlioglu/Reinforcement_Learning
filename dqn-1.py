@@ -214,8 +214,8 @@ class DQNAgent:
 
 
 	# Queries main network for Q values given current observation space (environment state)
-	def get_qs(self, state, step):
-		return self.model_predict(np.array(state).reshape(-1, *state.shape)/255)[0]
+	def get_qs(self, state):
+		return self.model.predict(np.array(state).reshape(-1, *state.shape)/255)[0]
 
 
 	# Trains main network every step during episode
